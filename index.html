@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood-to-Motivation | Find Your Spark</title>
+    <meta name="description"
+        content="A tiny AI tool to shift your mood. Select how you feel and get instant motivation.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Patrick+Hand&display=swap"
+        rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-glow"></div>
+
+    <div id="sticky-notes-container">
+        <!-- Notes will be injected here by JS -->
+    </div>
+
+    <main class="container">
+        <header>
+            <h1>Mood<span class="highlight">2</span>Motivation</h1>
+            <p class="subtitle">How are you feeling right now?</p>
+        </header>
+
+        <section class="mood-selector" id="mood-selector">
+            <button class="mood-btn" data-mood="angry" aria-label="Angry">
+                <span class="emoji">😡</span>
+                <span class="label">Angry</span>
+            </button>
+            <button class="mood-btn" data-mood="tired" aria-label="Tired">
+                <span class="emoji">😴</span>
+                <span class="label">Tired</span>
+            </button>
+            <button class="mood-btn" data-mood="sad" aria-label="Sad">
+                <span class="emoji">😢</span>
+                <span class="label">Sad</span>
+            </button>
+            <button class="mood-btn" data-mood="unmotivated" aria-label="Unmotivated">
+                <span class="emoji">😔</span>
+                <span class="label">Meh</span>
+            </button>
+            <button class="mood-btn" data-mood="happy" aria-label="Happy">
+                <span class="emoji">😄</span>
+                <span class="label">Happy</span>
+            </button>
+            <button class="mood-btn" data-mood="stressed" aria-label="Stressed">
+                <span class="emoji">🤯</span>
+                <span class="label">Stressed</span>
+            </button>
+        </section>
+
+        <section class="quote-display hidden" id="quote-display">
+            <div class="glass-card">
+                <div class="quote-content">
+                    <p id="quote-text">"..."</p>
+                    <p id="quote-category" class="category-tag">Category</p>
+                </div>
+                <button id="reset-btn" class="secondary-btn">Choose Another Mood</button>
+            </div>
+        </section>
+
+        <section class="dashboard">
+            <div class="glass-card chart-card">
+                <h2>Mood Tracker</h2>
+                <canvas id="moodChart"></canvas>
+                <div class="stats">
+                    <p>Most Frequent: <span id="top-mood">-</span></p>
+                    <p>Total Check-ins: <span id="total-checkins">0</span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
